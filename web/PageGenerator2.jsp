@@ -14,10 +14,26 @@
     <body>
         <h1>Hello World!</h1>
         <table border='5'>
-            <tr><th>One</th><th>Two</th><th>Three</th></tr>
-            <tr><td>Benjamin</td><td>Betsy</td><td>Freddy</td></tr>
-            <tr><td>Barbara</td><td>Brian</td><td>James</td></tr>
-            <tr><td>Jimmy</td><td>Dave</td><td>Josh</td></tr>
+            <tr>
+                <th>One</th>
+                <th>Two</th>
+                <th>Three</th>
+            </tr>
+            <tr>
+                <td>Benjamin</td>
+                <td>Betsy</td>
+                <td>Freddy</td>
+            </tr>
+            <tr>
+                <td>Barbara</td>
+                <td>Brian</td>
+                <td>James</td>
+            </tr>
+            <tr>
+                <td>Jimmy</td>
+                <td>Dave</td>
+                <td>Josh</td>
+            </tr>
         </table>
     </body>
 </html>
