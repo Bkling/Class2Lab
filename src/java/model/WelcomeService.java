@@ -6,8 +6,6 @@
 package model;
 
 import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  *
@@ -27,16 +25,16 @@ public class WelcomeService {
     }
 
     public String getTimeOfDay() {
-        morning.set(Calendar.HOUR, 11);
-        evening.set(Calendar.HOUR, 12);
-        night.set(Calendar.HOUR, 17);
+        morning.set(Calendar.HOUR_OF_DAY, 11);
+        evening.set(Calendar.HOUR_OF_DAY, 12);
+        night.set(Calendar.HOUR_OF_DAY, 17);
 
         if (cal.get(Calendar.HOUR_OF_DAY) <= (morning.get(Calendar.HOUR_OF_DAY))) {
-           saying = "Good Morning";
+            saying = "Good Morning";
         } else if (cal.get(Calendar.HOUR_OF_DAY) >= (evening.get(Calendar.HOUR_OF_DAY)) && cal.get(Calendar.HOUR_OF_DAY) < (evening.get(Calendar.HOUR_OF_DAY))) {
-           saying = "Good Afternoon";
+            saying = "Good Afternoon";
         } else if (cal.get(Calendar.HOUR_OF_DAY) >= (night.get(Calendar.HOUR_OF_DAY))) {
-          saying = "Good Evening";
+            saying = "Good Evening";
         }
         return saying;
     }

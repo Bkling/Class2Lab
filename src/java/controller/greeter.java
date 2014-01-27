@@ -44,7 +44,6 @@ public class greeter extends HttpServlet {
         ws.getTimeOfDay();
         String output = ws.getOutput(name);
 
-
         request.setAttribute("Answer", output);
 
         RequestDispatcher view
