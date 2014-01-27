@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Welcome Result</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-    </body>
+        <p>
+            <%
+                Object result = "";
+                Object res = request.getAttribute("Answer");
+                if (res != null) {
+                    result = res.toString();
+                }
+            %>
+        <p><%= result%></p>
+    </p>
+</body>
 </html>

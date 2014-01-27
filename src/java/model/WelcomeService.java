@@ -6,6 +6,8 @@
 package model;
 
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -13,23 +15,34 @@ import java.util.Calendar;
  */
 public class WelcomeService {
 
-    private Calendar cal = Calendar.getInstance();
+    private final Calendar cal = Calendar.getInstance();
+    private final Calendar morning = Calendar.getInstance();
+    private final Calendar evening = Calendar.getInstance();
+    private final Calendar night = Calendar.getInstance();
     private String name;
+    private String saying;
 
     public WelcomeService(String name) {
         this.name = name;
     }
 
-    public WelcomeService() {
+    public String getTimeOfDay() {
+        morning.set(Calendar.HOUR, 11);
+        evening.set(Calendar.HOUR, 12);
+        night.set(Calendar.HOUR, 17);
 
+        if (cal.get(Calendar.HOUR_OF_DAY) <= (morning.get(Calendar.HOUR_OF_DAY))) {
+           saying = "Good Morning";
+        } else if (cal.get(Calendar.HOUR_OF_DAY) >= (evening.get(Calendar.HOUR_OF_DAY)) && cal.get(Calendar.HOUR_OF_DAY) < (evening.get(Calendar.HOUR_OF_DAY))) {
+           saying = "Good Afternoon";
+        } else if (cal.get(Calendar.HOUR_OF_DAY) >= (night.get(Calendar.HOUR_OF_DAY))) {
+          saying = "Good Evening";
+        }
+        return saying;
     }
 
-    public Calendar getCal() {
-        return cal;
-    }
-
-    public void setCal(Calendar cal) {
-        this.cal = cal;
+    public String getOutput(String name) {
+        return saying + ", " + name + ". Welcome!";
     }
 
     public String getName() {
@@ -38,6 +51,14 @@ public class WelcomeService {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSaying() {
+        return saying;
+    }
+
+    public void setSaying(String saying) {
+        this.saying = saying;
     }
 
 }

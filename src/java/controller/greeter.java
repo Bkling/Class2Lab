@@ -7,12 +7,14 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.WelcomeService;
 
 /**
  *
@@ -36,7 +38,14 @@ public class greeter extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String firstName = request.getParameter("firstName");
+        String name = request.getParameter("firstName");
+
+        WelcomeService ws = new WelcomeService(name);
+        ws.getTimeOfDay();
+        String output = ws.getOutput(name);
+
+
+        request.setAttribute("Answer", output);
 
         RequestDispatcher view
                 = request.getRequestDispatcher(RESULT_PAGE);
