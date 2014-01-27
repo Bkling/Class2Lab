@@ -21,6 +21,7 @@
                 }
             %>
         <p><%= result%></p>
+        <p><a href="welcome.html">Go To Welcome Page</a></p>
     </p>
 </body>
 </html>
