@@ -14,7 +14,7 @@
     <body>
         <p>
             <%
-                Object result = "";
+                String result = "";
                 Object res = request.getAttribute("Answer");
                 if (res != null) {
                     result = res.toString();
